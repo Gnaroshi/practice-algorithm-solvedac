@@ -1,0 +1,22 @@
+// problem: Watering - 1
+// id: 9285
+// time taken: 
+
+3 2
+ab#de|aaacd
+abcde|bbbcd
+abcde|ee#cd
+ffchh|efffg
+fgggh|hhhgg
+-----+-----
+aaabb|aaabb
+dcccb|d#ccb
+ddeee|ddcee
+ffggg|gggfe
+#fhhh|hhhff
+-----+-----
+aaade|aaahh
+bbbde|bbbhg
+cccde|ccc#g
+fff#h|dddfg
+ggghh|eeeff

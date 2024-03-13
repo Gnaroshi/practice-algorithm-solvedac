@@ -1,0 +1,5 @@
+input_nums = input().split(' ')
+n = int(input_nums[0])
+m = int(input_nums[1])
+print(int(n // m))
+print(n % m)
