@@ -48,9 +48,15 @@ int main(void)
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    string s = "asdf";
+    string s = "rgjgmbuyhbfcx";
 
-    cout << '\\';
-    cout << s.substr(4);
+    for (int i = 0; i < 26; i++)
+    {
+        for (auto j : s)
+        {
+            cout << char((j - 'a' + i) % 26 + 'a');
+        }
+        cout << '\n';
+    }
     return 0;
 }
