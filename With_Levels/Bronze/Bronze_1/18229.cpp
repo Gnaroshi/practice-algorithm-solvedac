@@ -1,9 +1,6 @@
-// problem: 내가 살게, 아냐 내가 살게
-// id: 18229
-// tag:
-// time taken:
+H2
 #include <bits/stdc++.h>
-using namespace std;
+    using namespace std;
 int main(void)
 {
     ios::sync_with_stdio(false);
