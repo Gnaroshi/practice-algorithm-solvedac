@@ -1,60 +1,47 @@
-// problem: Historical TV Remote Control
-// id: 25871
+// problem: 롤 케이크
+// id: 3985
 // tag:
 // time taken:
-#include <bits/stdc++.h>
+
+#include <algorithm>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <vector>
 using namespace std;
+
 int main(void)
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
 
-    int n, t, tg;
-    cin >> n;
-    bool chk[10], chk2[1000];
-    fill(chk, chk + 10, 1);
-    fill(chk2, chk2 + 1000, 0);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> t;
-        chk[t] = 0;
-    }
-    cin >> tg;
-    for (int i = 0; i < 10; i++)
-    {
-        if (!chk[i])
-            continue;
-        for (int j = 0; j < 10; j++)
-        {
-            if (!chk[j])
-                continue;
-            for (int k = 0; k < 10; k++)
-            {
-                if (!chk[k])
-                    continue;
-                chk2[i * 100 + j * 10 + k] = 1;
-            }
-        }
-    }
-    int ans = 0x3f3f3f3f;
+  int l, n, p, k, mxan = -1, mxbn = -1, mxa = -1, mxb = -1, t;
+  int rc[1001] = {0};
+  int mx[1001] = {0};
+  cin >> l >> n;
 
-    for (int i = tg; i < 1000; i++)
+  for (int i = 1; i <= n; i++)
+  {
+    cin >> p >> k;
+    t = k - p + 1;
+    if (mxa < t)
     {
-        if (chk2[i])
-        {
-            ans = min(ans, i - tg);
-            break;
-        }
+      mxa = t;
+      mxan = i;
     }
-    for (int i = tg; i >= 0; i--)
-    {
-        if (chk2[i])
-        {
-            ans = min(ans, tg - i);
-            break;
-        }
-    }
-    cout << ans;
+    for (int j = p; j <= k; j++)
+      if (rc[j] == 0)
+        rc[j] = i;
+  }
 
-    return 0;
+  for (int i = 1; i <= l; i++)
+    mx[rc[i]]++;
+  mxbn = max_element(mx + 1, mx + n + 1) - mx;
+  cout << mxan << '\n'
+       << mxbn << '\n';
+
+  return 0;
 }

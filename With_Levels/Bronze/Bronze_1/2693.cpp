@@ -17,5 +17,15 @@ int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
+  int tc;
+  cin >> tc;
+  while (tc--) {
+    vector<int> v(10);
+    for (auto &i : v)
+      cin >> i;
+    sort(v.begin(), v.end());
+    cout << v[7] << '\n';
+  }
+
   return 0;
 }
