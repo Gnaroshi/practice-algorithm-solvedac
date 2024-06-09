@@ -1,4 +1,4 @@
-// problem: D번 - 밤양갱
+// problem: I번 - K-mins
 // id:
 // tag:
 // time taken:
@@ -15,7 +15,6 @@
 #include <vector>
 
 using namespace std;
-using ll = long long;
 using pii = pair<int, int>;
 using vpi = vector<pii>;
 using vi = vector<int>;
@@ -23,29 +22,27 @@ using vvi = vector<vi>;
 using vvpi = vector<vpi>;
 using vb = vector<bool>;
 using vf = vector<double>;
+using ll = long long;
 
-ll n, dal = 10;
+int n, k;
+vector<ll> a;
+ll ans;
 
 int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  cin >> n;
-  if (n == 1) {
-    cout << 10 << '\n';
-    return 0;
-  }
-  if (n > 2)
-    dal -= 1;
-  ll ad = 0, cur = 1, m = 1;
-  while (true) {
-    if (cur >= n)
-      break;
-    ad++;
-    cur += m;
-    m *= 2;
+  cin >> n >> k;
+  a.resize(n);
+  for (auto &i : a)
+    cin >> i;
+
+  for (int l = 0; l < n; l++) {
+    for (int r = l; r < n; r++) {
+      if (r - l + 1 < k)
+        continue;
+    }
   }
 
-  cout << dal + ad << '\n';
   return 0;
 }

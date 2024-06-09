@@ -1,4 +1,4 @@
-// problem:
+// problem: F번 - 지금부터 서로 죽여라
 // id:
 // tag:
 // time taken:
@@ -15,6 +15,7 @@
 #include <vector>
 
 using namespace std;
+using ll = long long;
 using pii = pair<int, int>;
 using vpi = vector<pii>;
 using vi = vector<int>;
@@ -26,6 +27,13 @@ using vf = vector<double>;
 int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
+
+  int tc;
+  cin >> tc;
+  while (tc--) {
+    ll x, y, a, b, c, d;
+    cin >> x >> y >> a >> b >> c >> d;
+  }
 
   return 0;
 }
