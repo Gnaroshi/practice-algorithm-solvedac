@@ -1,5 +1,5 @@
-// problem: 단원평가
-// id: 31798
+// problem: UOSPC 세기
+// id: 30822
 // tag:
 // time taken:
 
@@ -37,15 +37,23 @@ int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  ll a, b, c;
-  cin >> a >> b >> c;
-  if (a == 0) {
-    cout << (c * c - b) << '\n';
-  } else if (b == 0) {
-    cout << (c * c - a) << '\n';
-  } else {
-    cout << ll(sqrt(a + b)) << '\n';
+  int n;
+  string s;
+  int cnt[5] = {0};
+  cin >> n >> s;
+  for (auto &i : s) {
+    if (i == 'u')
+      cnt[0]++;
+    else if (i == 'o')
+      cnt[1]++;
+    else if (i == 's')
+      cnt[2]++;
+    else if (i == 'p')
+      cnt[3]++;
+    else if (i == 'c')
+      cnt[4]++;
   }
 
+  cout << *min_element(cnt, cnt + 5) << '\n';
   return 0;
 }
