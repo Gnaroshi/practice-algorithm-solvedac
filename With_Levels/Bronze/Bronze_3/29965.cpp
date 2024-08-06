@@ -37,22 +37,30 @@ int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  ll n, m = 0, j = 0, t;
+  int n;
+  double m = 0, j = 0, cntm = 0, cntj = 0, cm = 0, cj = 0, t;
   char c;
   cin >> n;
   while (n--) {
     cin >> c >> t;
-    if (c == 'M')
+    if (c == 'M') {
+      cm++;
       m += t;
-    else
+    } else {
+      cj++;
       j += t;
+    }
   }
-  if (m > j)
-    cout << "M\n";
-  else if (m < j)
-    cout << "J\n";
-  else
+  if (cm != 0)
+    m /= cm;
+  if (cj != 0)
+    j /= cj;
+  if (abs(m - j) < 0.000000001)
     cout << "V\n";
+  else if (m > j)
+    cout << "M\n";
+  else
+    cout << "J\n";
 
   return 0;
 }
