@@ -10,6 +10,7 @@
 #include <numeric>
 #include <queue>
 #include <set>
+#include <sstream>
 #include <stack>
 #include <string>
 #include <unordered_map>
@@ -43,8 +44,21 @@ int main(void) {
 
   while (n--) {
     cin >> t >> d;
-    if (t.find(s) != string::npos) {
-      ans += d;
+    stringstream st;
+    vector<string> vs;
+    for (auto &i : t) {
+      if (i == '_')
+        i = ' ';
+    }
+    st.str(t);
+    while (st >> t) {
+      vs.push_back(t);
+    }
+    for (auto i : vs) {
+      if (i == s) {
+        ans += d;
+        break;
+      }
     }
   }
 
