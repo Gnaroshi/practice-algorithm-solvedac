@@ -39,5 +39,8 @@ int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
+  string s;
+  cin >> s;
+
   return 0;
 }
