@@ -47,11 +47,11 @@ int main(void) {
   }
 
   while (true) {
-    if (r == n) {
-      break;
-    } else if (cur >= m) {
+    if (cur >= m) {
       cur -= v[l];
       l++;
+    } else if (r == n) {
+      break;
     } else {
       cur += v[r];
       r++;
