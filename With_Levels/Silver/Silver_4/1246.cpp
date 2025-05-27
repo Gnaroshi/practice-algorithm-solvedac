@@ -50,6 +50,7 @@ int main(void) {
 
   sort(v.begin(), v.end());
   mnp = v.front();
+  l = max(0, m - min(n, m));
 
   for (int i = mnp; i <= mxp; i++) {
     for (int j = l; j < m; j++) {
