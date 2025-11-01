@@ -37,16 +37,12 @@ int main(void) {
   string cur;
   vi nums(9);
   iota(nums.begin(), nums.end(), 1);
-  // do {
-  //   bool chk = true;
-  //   cur = to_string(nums[0]) + to_string(nums[1]) + to_string(nums[2]);
-  //   cout << cur << "\n";
-  //
-  // } while (next_permutation(nums.begin(), nums.end()));
+  do {
+    bool chk = true;
+    cur = to_string(nums[0]) + to_string(nums[1]) + to_string(nums[2]);
+    cout << cur << "\n";
 
-  for (auto i : nums) {
-    cout << i << ' ';
-  }
+  } while (next_permutation(nums.begin(), nums.end()));
 
   return 0;
 }
