@@ -47,29 +47,18 @@ int main(void) {
   }
 
   for (int i = 1; i <= n; i++) {
-    vb chk(n + 1, true);
-    chk[i] = false;
-    queue<pii> q;
-    q.push({i, 1});
-    while (!q.empty()) {
-      tie(cur, cnt) = q.front();
-      q.pop();
-      nxt = v[cur];
-      if (nxt != 0 && chk[nxt]) {
-        q.push({nxt, cnt + 1});
-        chk[nxt] = false;
-      }
+    vb chk(n + 1, false);
+    cur = i;
+    cnt = 0;
+
+    while (!chk[cur]) {
+      chk[cur] = true;
+      cnt++;
+      cur = v[cur];
     }
 
-    tmx = 0;
-    for (int j = 1; j <= n; j++) {
-      if (!chk[j]) {
-        tmx++;
-      }
-    }
-
-    if (mx < tmx) {
-      mx = tmx;
+    if (cnt > mx) {
+      mx = cnt;
       mxl = i;
     }
   }
