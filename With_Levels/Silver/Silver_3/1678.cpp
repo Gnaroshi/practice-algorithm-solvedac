@@ -1,5 +1,5 @@
-// problem: 침투 계획 세우기
-// id: 1606
+// problem: 기차
+// id: 1678
 // tag:
 // time taken:
 
@@ -39,12 +39,24 @@ int main(void) {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  ll a, b, n, ans;
-  cin >> a >> b;
-  n = a + b + !b;
-  ans = 1 + 3 * n * (n - 1) + b;
+  int t, m, n, cur;
+  cin >> t >> m >> n;
+  string tn;
+  vector<pair<int, string>> v;
+  for (int i = 0; i < t; i++) {
+    cin >> tn;
 
-  cout << ans << "\n";
+    while (true) {
+      cin >> cur;
+      if (cur == -1) {
+        break;
+      }
+      v.push_back({(cur + 60 - m) % 60, tn});
+    }
+  }
+
+  sort(v.begin(), v.end(), [](auto a, auto b) { return a.first < b.first; });
+  cout << v[(n - 1) % v.size()].second << '\n';
 
   return 0;
 }
